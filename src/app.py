@@ -22,7 +22,7 @@ def send_json() :
     return jsonify( {'StartTime' : startTime,
                      'Server Hit': str(hit.getServerHitCount())} )
 
-@app.route("/payload")
+@app.route("/payload",methods=['GET', 'POST'])
 def payload() :
 	return str(request.get_data(True,True,False))
 if __name__ == "__main__":
